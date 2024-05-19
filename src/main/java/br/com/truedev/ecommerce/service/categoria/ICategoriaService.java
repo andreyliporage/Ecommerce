@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface ICategoriaService {
 
-    public Categoria criarNova(Categoria nova);
-    public Categoria alterar(Categoria categoria);
-    public List<Categoria> listarTudo();
-    public void apagarCategoria(Integer id);
+    Categoria criarNova(Categoria nova);
+    Categoria alterar(Categoria categoria);
+    List<Categoria> listarTudo();
+    void apagarCategoria(Integer id);
 }

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface CategoriaDAO extends CrudRepository<Categoria, Integer> {
 
-    public List<Categoria> findAllByOrderByNomeAsc();
+    List<Categoria> findAllByOrderByNomeAsc();
 }
