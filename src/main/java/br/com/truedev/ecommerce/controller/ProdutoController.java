@@ -4,6 +4,7 @@ import br.com.truedev.ecommerce.model.Categoria;
 import br.com.truedev.ecommerce.model.Produto;
 import br.com.truedev.ecommerce.service.produto.ProdutoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +17,8 @@ public class ProdutoController {
     private ProdutoServiceImpl produtoService;
 
     @GetMapping("/produtos")
-    public ResponseEntity<List<Produto>> getAll() {
-        return ResponseEntity.ok(produtoService.recuperarTodos());
+    public ResponseEntity<Page<Produto>> getAll(@RequestParam(name = "p", defaultValue = "0") int p) {
+        return ResponseEntity.ok(produtoService.recuperarTodos(p));
     }
 
     @GetMapping("/produtos/search")
