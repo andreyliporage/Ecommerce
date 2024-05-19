@@ -1,5 +1,6 @@
 package br.com.truedev.ecommerce.service.pedido;
 
+import br.com.truedev.ecommerce.dto.FaturamentoMensal;
 import br.com.truedev.ecommerce.model.Pedido;
 
 import java.util.List;
@@ -11,4 +12,5 @@ public interface IPedidoService {
     List<Pedido> recuperarTodos();
     Pedido recuperarPeloNumero(Integer numPedido);
     List<Pedido> recuperarPorStatus(Integer status);
+    List<FaturamentoMensal> recuperarFaturamento(Integer ano);
 }

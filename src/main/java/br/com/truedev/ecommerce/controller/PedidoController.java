@@ -1,5 +1,6 @@
 package br.com.truedev.ecommerce.controller;
 
+import br.com.truedev.ecommerce.dto.FaturamentoMensal;
 import br.com.truedev.ecommerce.model.Pedido;
 import br.com.truedev.ecommerce.model.Produto;
 import br.com.truedev.ecommerce.service.pedido.IPedidoService;
@@ -36,5 +37,10 @@ public class PedidoController {
             return ResponseEntity.ok(pedido);
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/pedidos/faturamento/{ano}")
+    public ResponseEntity<List<FaturamentoMensal>> getFaturamentoMensal(@PathVariable Integer ano) {
+        return ResponseEntity.ok(pedidoService.recuperarFaturamento(ano));
     }
 }

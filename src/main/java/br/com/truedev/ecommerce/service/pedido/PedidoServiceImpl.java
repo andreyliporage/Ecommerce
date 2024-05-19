@@ -1,6 +1,7 @@
 package br.com.truedev.ecommerce.service.pedido;
 
 import br.com.truedev.ecommerce.dao.PedidoDAO;
+import br.com.truedev.ecommerce.dto.FaturamentoMensal;
 import br.com.truedev.ecommerce.model.ItemPedido;
 import br.com.truedev.ecommerce.model.Pedido;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +56,10 @@ public class PedidoServiceImpl implements IPedidoService {
     @Override
     public List<Pedido> recuperarPorStatus(Integer status) {
         return pedidoDAO.findAllByStatus(status);
+    }
+
+    @Override
+    public List<FaturamentoMensal> recuperarFaturamento(Integer ano) {
+        return pedidoDAO.recuperarFaturamento(ano);
     }
 }
