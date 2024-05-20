@@ -24,6 +24,10 @@ public class MySecurityConfig {
                                 .permitAll()
                                 .requestMatchers(HttpMethod.POST, "/login")
                                 .permitAll()
+                                .requestMatchers(HttpMethod.GET, "/v3/api-docs/**")
+                                .permitAll()
+                                .requestMatchers(HttpMethod.GET, "/swagger**")
+                                .permitAll()
                                 .anyRequest().authenticated());
 
         http.addFilterBefore(new MyECFilter(), UsernamePasswordAuthenticationFilter.class);
